@@ -15,10 +15,19 @@ Campfire is single-tenant: any rooms designated "public" will be accessible by
 all users in the system. To support entirely distinct groups of customers, you
 would deploy multiple instances of the application.
 
-## Running in development
+## Installation
+- install your ruby version manager of choice (rbenv or chruby)
+- install the version of ruby in the [.ruby-version file](/.ruby-version)
+- clone the repo and ensure that `ruby -v` returns the version in the file above
+- you will probably need to run `brew install coreutils` or install [GNU Coreutils](https://www.gnu.org/software/coreutils/) some other way
+- run `bin/bundle install` to install dependencies
+- run `bin/setup` to setup the DB ([this is what it runs](/bin/setup))
+- run `bin/dev` to start the server ([this is what it calls](/bin/dev))
 
-    bin/setup
-    bin/rails server
+> [!Note]
+> In case you're unfamiliar with Ruby, we run `bin/{command}` to use the specific version of the command specified in this project's Gemfile rather than any other older versions of the library you might have installed. Generally, always run `bin/rails` or `bin/bundle`
+
+To start the server at any time in development, run `bin/dev` again
 
 ## Deploying with Docker
 
